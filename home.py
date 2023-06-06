@@ -201,14 +201,14 @@ def showEnrichPage() :
 
         # Initialize campaign id holder
         campaign_info = ''
-        campaign_group = ''
+        #campaign_group = ''
 
         # When there is a campaign selected
         if campaign_name :
 
             # Get the selected campaign's info
             campaign_info = list(campaign_data[campaign_data['Campaign Name'] == campaign_name]['Campaign ID'])[0]
-            campaign_group = list(campaign_data[campaign_data['Campaign Name'] == campaign_name]['Campaign Group'])[0]
+            #campaign_group = list(campaign_data[campaign_data['Campaign Name'] == campaign_name]['Campaign Group'])[0]
 
     # In the second column
     with column_2 :
@@ -276,14 +276,14 @@ def showEnrichPage() :
 
         # Initialize creative id holder
         creative_id = ''
-        solution_area = ''
+        #solution_area = ''
 
         # When there is a creative selected
         if creative_name :
 
             # Get the selected creative's info
             creative_id = list(campaign_data[campaign_data['Creative Name'] == creative_name]['Creative ID'])[0]
-            solution_area = list(campaign_data[campaign_data['Creative Name'] == creative_name]['Solution Area'])[0]
+            #solution_area = list(campaign_data[campaign_data['Creative Name'] == creative_name]['Solution Area'])[0]
 
     # In the third column
     with column_3 :
