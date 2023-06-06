@@ -201,6 +201,7 @@ def showEnrichPage() :
 
         # Initialize campaign id holder
         campaign_info = ''
+        campaign_group = ''
 
         # When there is a campaign selected
         if campaign_name :
@@ -275,6 +276,7 @@ def showEnrichPage() :
 
         # Initialize creative id holder
         creative_id = ''
+        solution_area = ''
 
         # When there is a creative selected
         if creative_name :
