@@ -200,6 +200,12 @@ def showEnrichPage() :
         # Initialize campaign id holder
         campaign_info = ''
 
+        # Initialize creative name holder
+        creative_name = ''
+
+        # Initialize creative id holder
+        creative_id = ''
+
         # When there is a campaign selected
         if campaign_name :
 
@@ -275,7 +281,7 @@ def showEnrichPage() :
         with st.spinner('In progress...'):
 
             # Enrich data
-            en.enrichCSV(uploaded_file, campaign_name, campaign_info, extract_date)
+            en.enrichCSV(uploaded_file, campaign_name, campaign_info, creative_name, creative_id, extract_date)
             
             # End the process 
             en.endProcess()
