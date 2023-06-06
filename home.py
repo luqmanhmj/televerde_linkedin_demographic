@@ -213,19 +213,19 @@ def showEnrichPage() :
         if campaign_check :
 
             # Use the list of creative name
-            campaign_option = list(campaign_data['Creative Name'])
+            creative_option = list(campaign_data['Creative Name'])
         
         # When no proper campaign list found
         else :
 
             # No options should be available
-            campaign_option = []
+            creative_option = []
             
 
         # Create select box for creative options
         creative_name = st.selectbox(
             label = 'Creative Name :',
-            options = campaign_option,
+            options = creative_option,
             disabled = not campaign_check
         )
 
