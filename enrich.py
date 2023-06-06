@@ -19,7 +19,7 @@ def getCampaignData(campaign_list) :
         if list(df.columns) != ['Campaign ID', 'Campaign Name', 'Campaign Group', 'Creative ID', 'Creative Name', 'Solution Area'] :
 
             # Display error message
-            st.error('Invalid file content. Please ensure file contains *Campaign ID*, *Campaign Name*, *Creative ID*, *Creative Name*, *Campaign Group* and *Solution Area* fields.')
+            st.error('Invalid file content. Please ensure file contains *Campaign ID*, *Campaign Name*, *Campaign Group*, *Creative ID*, *Creative Name*, and *Solution Area* fields.')
 
             # Escape function
             return []
@@ -28,7 +28,7 @@ def getCampaignData(campaign_list) :
         elif df.empty :
 
             # Display error message
-            st.error('Missing file content. Please ensure file contains records of  *Campaign ID*, *Campaign Name*, *Creative ID*, *Creative Name*, *Campaign Group* and *Solution Area*.')
+            st.error('Missing file content. Please ensure file contains records of *Campaign ID*, *Campaign Name*, *Campaign Group*, *Creative ID*, *Creative Name*, and *Solution Area*.')
 
             # Escape function
             return []
@@ -37,7 +37,7 @@ def getCampaignData(campaign_list) :
         elif len(df[df.duplicated()]) > 0 :
 
             # Display error message
-            st.error('There are duplicate combinations of *Campaign ID*, *Campaign Name*, *Creative ID*, *Creative Name*, *Campaign Group* and *Solution Area* found.')
+            st.error('There are duplicate combinations of *Campaign ID*, *Campaign Name*, *Campaign Group*, *Creative ID*, *Creative Name*, and *Solution Area* found.')
 
             # Escape function
             return []
@@ -70,7 +70,7 @@ def getCampaignData(campaign_list) :
     except pd.errors.ParserError :
 
         # Display error message
-        st.error('Invalid file content. Please ensure file contains *Campaign ID*, *Campaign Name*, *Creative ID*, *Creative Name*, *Campaign Group* and *Solution Area* fields.')
+        st.error('Invalid file content. Please ensure file contains *Campaign ID*, *Campaign Name*, *Campaign Group*, *Creative ID*, *Creative Name*, and *Solution Area* fields.')
 
         # Escape function
         return []
@@ -116,7 +116,7 @@ def addColumns(df, campaign_group, campaign_name, campaign_id, creative_name, cr
 
 
 # Function to enrich data
-def enrichCSV(uploaded_file,  campaign_group, campaign_name, campaign_id, creative_name, creative_id, solution_area, extract_date) :
+def enrichCSV(uploaded_file, campaign_group, campaign_name, campaign_id, creative_name, creative_id, solution_area, extract_date) :
 
     # Try block for reading data in
     try : 
