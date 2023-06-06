@@ -172,7 +172,7 @@ def showEnrichPage() :
     st.subheader(':spiral_calendar_pad: Select Campaign and Date')
 
     # Create equal size columns 
-    column_1, column_2 = st.columns([1, 1])
+    column_1, column_2, column_3 = st.columns([1, 1, 1])
 
     # In the first column
     with column_1 :
@@ -200,21 +200,46 @@ def showEnrichPage() :
         # Initialize campaign id holder
         campaign_info = ''
 
-        # Initialize creative name holder
-        creative_name = ''
-
-        # Initialize creative id holder
-        creative_id = ''
-
         # When there is a campaign selected
         if campaign_name :
 
             # Get the selected campaign's info
             campaign_info = list(campaign_data[campaign_data['Campaign Name'] == campaign_name]['Campaign ID'])[0]
 
-
     # In the second column
     with column_2 :
+
+        # When there is a proper campaign list 
+        if campaign_check :
+
+            # Use the list of creative name
+            campaign_option = list(campaign_data['Creative Name'])
+        
+        # When no proper campaign list found
+        else :
+
+            # No options should be available
+            campaign_option = []
+            
+
+        # Create select box for creative options
+        creative_name = st.selectbox(
+            label = 'Creative Name :',
+            options = campaign_option,
+            disabled = not campaign_check
+        )
+
+        # Initialize creative id holder
+        creative_id = ''
+
+        # When there is a creative selected
+        if creative_name :
+
+            # Get the selected creative's info
+            creative_id = list(campaign_data[campaign_data['Creative Name'] == campaign_name]['Creative ID'])[0]
+
+    # In the third column
+    with column_3 :
 
         # Create date picker for extract date
         extract_date = st.date_input(
