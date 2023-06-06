@@ -353,7 +353,7 @@ def showEnrichPage() :
         with st.spinner('In progress...'):
 
             # Enrich data
-            en.enrichCSV(uploaded_file, campaign_group, campaign_name, campaign_id, creative_name, creative_id, solution_area, extract_date)
+            en.enrichCSV(uploaded_file, campaign_id, campaign_name, campaign_group, creative_id, creative_name, solution_area, extract_date)
             
             # End the process 
             en.endProcess()
