@@ -232,7 +232,7 @@ def showEnrichPage() :
         if creative_name :
 
             # Get the selected creative's info
-            creative_id = list(campaign_data[campaign_data['Creative Name'] == creative_name]['Creative ID'])[2]
+            creative_id = list(campaign_data[campaign_data['Creative Name'] == creative_name]['Creative ID'])[0]
 
     # In the third column
     with column_3 :
