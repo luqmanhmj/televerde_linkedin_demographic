@@ -207,6 +207,7 @@ def showEnrichPage() :
 
             # Get the selected campaign's info
             campaign_info = list(campaign_data[campaign_data['Campaign Name'] == campaign_name]['Campaign ID'])[0]
+            campaign_group = list(campaign_data[campaign_data['Campaign Name'] == campaign_name]['Campaign Group'])[0]
 
     # In the second column
     with column_2 :
@@ -280,6 +281,7 @@ def showEnrichPage() :
 
             # Get the selected creative's info
             creative_id = list(campaign_data[campaign_data['Creative Name'] == creative_name]['Creative ID'])[0]
+            solution_area = list(campaign_data[campaign_data['Creative Name'] == creative_name]['Solution Area'])[0]
 
     # In the third column
     with column_3 :
@@ -349,7 +351,7 @@ def showEnrichPage() :
         with st.spinner('In progress...'):
 
             # Enrich data
-            en.enrichCSV(uploaded_file, campaign_name, campaign_info, creative_name, creative_id, extract_date)
+            en.enrichCSV(uploaded_file, campaign_group, campaign_name, campaign_id, creative_name, creative_id, solution_area, extract_date)
             
             # End the process 
             en.endProcess()
