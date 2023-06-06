@@ -85,6 +85,10 @@ def showEnrichPage() :
     # To store campaigns covered
     if 'campaign_covered' not in st.session_state:
         st.session_state['campaign_covered'] = []
+        
+    # To store campaigns covered
+    if 'creative_covered' not in st.session_state:
+        st.session_state['creative_covered'] = []
 
     # =====================================================================================================================
 
@@ -156,6 +160,7 @@ def showEnrichPage() :
         st.session_state['openejob_function_datad_data'] = []
         st.session_state['county_data'] = []
         st.session_state['campaign_covered'] = []
+        st.session_state['creative_covered'] = []
 
     # Create space
     st.write('')
@@ -525,6 +530,7 @@ def showEnrichPage() :
             st.session_state['openejob_function_datad_data'] = []
             st.session_state['county_data'] = []
             st.session_state['campaign_covered'] = []
+            st.session_state['creative_covered'] = []
 
             # Rerun the page
             st.experimental_rerun()
