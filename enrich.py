@@ -402,10 +402,12 @@ def enrichCSV(uploaded_file, campaign_name, campaign_id, creative_name, creative
 
         # Add campaign choice to list of covered campaign
         st.session_state['campaign_covered'].append(campaign_name)
+        st.session_state['creative_covered'].append(creative_name)
 
         # Create output dictionary
         dict_of_lists = {
-            'Campaign Name': st.session_state['campaign_covered']
+            'Campaign Name': st.session_state['campaign_covered'],
+            'Creative Name': st.session_state['creative_covered']
         }
 
         # Create output dataframe
