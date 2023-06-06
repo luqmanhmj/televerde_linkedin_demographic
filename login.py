@@ -10,7 +10,7 @@ from home import showEnrichPage
 
 # Set tab info
 st.set_page_config(
-    page_title="2X | ToolsGroup",
+    page_title="2X | Televerde",
     page_icon="🎏"
 )
 
@@ -87,7 +87,7 @@ def showLoginPage() :
     with content :
     
         # Set logo
-        st.image('toolsgroup-logo.png', use_column_width = 'always')
+        st.image('televerde-logo.png', use_column_width = 'always')
 
         # Set the inner content alignment
         inner_left_space, inner_content, inner_right_space = st.columns([1, 3, 1])
