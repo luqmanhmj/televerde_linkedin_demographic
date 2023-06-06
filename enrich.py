@@ -16,7 +16,7 @@ def getCampaignData(campaign_list) :
         df = pd.read_csv(campaign_list)
 
         # When file's columns doesnt match expected columns
-        if list(df.columns) != ['Campaign ID', 'Campaign Name'] :
+        if list(df.columns) != ['Campaign ID', 'Campaign Name', 'Creative ID', 'Creative Name'] :
 
             # Display error message
             st.error('Invalid file content. Please ensure file contains *Campaign ID* and *Campaign Name* fields.')
@@ -100,10 +100,13 @@ def proceedExport() :
 
 
 # Function to add the necessary columns
-def addColumns(df, campaign_id, extract_date) :
+def addColumns(df, campaign_name, campaign_id, creative_name, creative_id, extract_date) :
     
     # Add the necessary columns
+    df['Campaign Name'] = campaign_name
     df['Campaign ID'] = campaign_id
+    df['Creative Name'] = creative_name
+    df['Creative ID'] = creative_id
     df['Extract Date'] = extract_date
 
     # Return modified dataframe
@@ -111,7 +114,7 @@ def addColumns(df, campaign_id, extract_date) :
 
 
 # Function to enrich data
-def enrichCSV(uploaded_file, campaign_choice, campaign_id, extract_date) :
+def enrichCSV(uploaded_file, campaign_name, campaign_id, creative_name, creative_id, extract_date) :
 
     # Try block for reading data in
     try : 
@@ -146,7 +149,7 @@ def enrichCSV(uploaded_file, campaign_choice, campaign_id, extract_date) :
         company_name_df = df.iloc[:null_index_list[0]] 
 
         # Add columns to dataframe
-        company_name_df = addColumns(company_name_df, campaign_id, extract_date)
+        company_name_df = addColumns(company_name_df, campaign_name, campaign_id, creative_name, creative_id, extract_date)
 
         # When there is no data for this segment
         if len(st.session_state['company_name_data']) == 0 :
@@ -175,7 +178,7 @@ def enrichCSV(uploaded_file, campaign_choice, campaign_id, extract_date) :
         company_industry_df = company_industry_df[1:]
 
         # Add columns to dataframe
-        company_industry_df = addColumns(company_industry_df, campaign_id, extract_date)
+        company_industry_df = addColumns(company_industry_df, campaign_name, campaign_id, creative_name, creative_id, extract_date)
 
         # When there is no data for this segment
         if len(st.session_state['company_industry_data']) == 0 :
@@ -204,7 +207,7 @@ def enrichCSV(uploaded_file, campaign_choice, campaign_id, extract_date) :
         company_size_df = company_size_df[1:]
 
         # Add columns to dataframe
-        company_size_df = addColumns(company_size_df, campaign_id, extract_date)
+        company_size_df = addColumns(company_size_df, campaign_name, campaign_id, creative_name, creative_id, extract_date)
 
         # When there is no data for this segment
         if len(st.session_state['company_size_data']) == 0 :
@@ -233,7 +236,7 @@ def enrichCSV(uploaded_file, campaign_choice, campaign_id, extract_date) :
         country_region_df = country_region_df[1:]
 
         # Add columns to dataframe
-        country_region_df = addColumns(country_region_df, campaign_id, extract_date)
+        country_region_df = addColumns(country_region_df, campaign_name, campaign_id, creative_name, creative_id, extract_date)
 
         # When there is no data for this segment
         if len(st.session_state['country_region_data']) == 0 :
@@ -262,7 +265,7 @@ def enrichCSV(uploaded_file, campaign_choice, campaign_id, extract_date) :
         location_df = location_df[1:]
 
         # Add columns to dataframe
-        location_df = addColumns(location_df, campaign_id, extract_date)
+        location_df = addColumns(location_df, campaign_name, campaign_id, creative_name, creative_id, extract_date)
 
         # When there is no data for this segment
         if len(st.session_state['location_data']) == 0 :
@@ -291,7 +294,7 @@ def enrichCSV(uploaded_file, campaign_choice, campaign_id, extract_date) :
         job_seniority_df = job_seniority_df[1:]
 
         # Add columns to dataframe
-        job_seniority_df = addColumns(job_seniority_df, campaign_id, extract_date)
+        job_seniority_df = addColumns(job_seniority_df, campaign_name, campaign_id, creative_name, creative_id, extract_date)
 
         # When there is no data for this segment
         if len(st.session_state['job_seniority_data']) == 0 :
@@ -320,7 +323,7 @@ def enrichCSV(uploaded_file, campaign_choice, campaign_id, extract_date) :
         job_title_df = job_title_df[1:]
 
         # Add columns to dataframe
-        job_title_df = addColumns(job_title_df, campaign_id, extract_date)
+        job_title_df = addColumns(job_title_df, campaign_name, campaign_id, creative_name, creative_id, extract_date)
 
         # When there is no data for this segment
         if len(st.session_state['job_title_data']) == 0 :
@@ -349,7 +352,7 @@ def enrichCSV(uploaded_file, campaign_choice, campaign_id, extract_date) :
         job_function_df = job_function_df[1:]
 
         # Add columns to dataframe
-        job_function_df = addColumns(job_function_df, campaign_id, extract_date)
+        job_function_df = addColumns(job_function_df, campaign_name, campaign_id, creative_name, creative_id, extract_date)
 
         # When there is no data for this segment
         if len(st.session_state['job_function_data']) == 0 :
@@ -378,7 +381,7 @@ def enrichCSV(uploaded_file, campaign_choice, campaign_id, extract_date) :
         county_df = county_df[1:]
 
         # Add columns to dataframe
-        county_df = addColumns(county_df, campaign_id, extract_date)
+        county_df = addColumns(county_df, campaign_name, campaign_id, creative_name, creative_id, extract_date)
 
         # When there is no data for this segment
         if len(st.session_state['county_data']) == 0 :
@@ -398,7 +401,7 @@ def enrichCSV(uploaded_file, campaign_choice, campaign_id, extract_date) :
         # ======================================================================================================
 
         # Add campaign choice to list of covered campaign
-        st.session_state['campaign_covered'].append(campaign_choice)
+        st.session_state['campaign_covered'].append(campaign_name)
 
         # Create output dictionary
         dict_of_lists = {

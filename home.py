@@ -30,6 +30,10 @@ def showEnrichPage() :
     if 'campaign_upload' not in st.session_state:
         st.session_state['campaign_upload'] = str(randint(1000, 100000000))
 
+    # To store ads uploader key
+    if 'ads_upload' not in st.session_state:
+        st.session_state['ads_upload'] = str(randint(1000, 100000000))
+
     # To store file uploader key
     if 'file_upload' not in st.session_state:
         st.session_state['file_upload'] = str(randint(1000, 100000000))
