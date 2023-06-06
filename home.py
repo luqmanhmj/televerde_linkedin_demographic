@@ -191,7 +191,7 @@ def showEnrichPage() :
             
 
         # Create select box for campaign options
-        campaign_choice = st.selectbox(
+        campaign_name = st.selectbox(
             label = 'Campaign :',
             options = campaign_option,
             disabled = not campaign_check
@@ -201,10 +201,10 @@ def showEnrichPage() :
         campaign_info = ''
 
         # When there is a campaign selected
-        if campaign_choice :
+        if campaign_name :
 
             # Get the selected campaign's info
-            campaign_info = list(campaign_data[campaign_data['Campaign Name'] == campaign_choice]['Campaign ID'])[0]
+            campaign_info = list(campaign_data[campaign_data['Campaign Name'] == campaign_name]['Campaign ID'])[0]
 
 
     # In the second column
@@ -275,7 +275,7 @@ def showEnrichPage() :
         with st.spinner('In progress...'):
 
             # Enrich data
-            en.enrichCSV(uploaded_file, campaign_choice, campaign_info, extract_date)
+            en.enrichCSV(uploaded_file, campaign_name, campaign_info, extract_date)
             
             # End the process 
             en.endProcess()
