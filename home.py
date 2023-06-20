@@ -183,7 +183,12 @@ def showEnrichPage() :
 
             # Use the list of campaign name
             #campaign_option = list(campaign_data['Campaign Name'])
-            campaign_option = ['Lead Gen - Lead Pool 2023', 'Rally Starter Edition Website Conversion2023', 'Website Conversion - Lead Pool 2023']
+            campaign_option = ['Lead Gen - Lead Pool 2023', 
+                               'Website Conversion: Rally Starter Edition (completed)', 
+                               'Website Conversion - Lead Pool 2023',
+                               'Lead Gen: Rally Starter Edition June 2023',
+                               'Website Conversion: Rally Starter Edition June 2023']
+            
         
         # When no proper campaign list found
         else :
@@ -257,7 +262,8 @@ def showEnrichPage() :
                             'Ad Copy 6_Automation',
                             'Ad Copy 6_Clarity',
                             'Ad Copy 6_NetOps',
-                            'Ad Copy 6_Rally']
+                            'Ad Copy 6_Rally',
+                            'Ad Copy 7']
 
         
         # When no proper campaign list found
