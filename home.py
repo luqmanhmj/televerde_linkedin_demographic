@@ -217,7 +217,7 @@ def showEnrichPage() :
         if campaign_check :
 
             # Use the list of creative name
-            creative_option = campaign_data['Creative Name'].unique().tolist()
+            creative_option = campaign_data['Creative ID'].unique().tolist()
 
         
         # When no proper campaign list found
@@ -228,22 +228,22 @@ def showEnrichPage() :
             
 
         # Create select box for creative options
-        creative_name = st.selectbox(
-            label = 'Creative Name :',
+        creative_id = st.selectbox(
+            label = 'Creative ID :',
             options = creative_option,
             disabled = not campaign_check
         )
 
         # Initialize creative id holder
-        creative_id = ''
+        creative_name = ''
         solution_area = ''
 
         # When there is a creative selected
-        if creative_name :
+        if creative_id :
 
             # Get the selected creative's info
-            creative_id = list(campaign_data[campaign_data['Creative Name'] == creative_name]['Creative ID'])[0]
-            solution_area = list(campaign_data[campaign_data['Creative Name'] == creative_name]['Solution Area'])[0]
+            creative_id = list(campaign_data[campaign_data['Creative ID'] == creative_id]['Creative ID'])[0]
+            solution_area = list(campaign_data[campaign_data['Creative ID'] == creative_id]['Solution Area'])[0]
 
     # In the third column
     with column_3 :
