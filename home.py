@@ -182,13 +182,8 @@ def showEnrichPage() :
         if campaign_check :
 
             # Use the list of campaign name
-            #campaign_option = list(campaign_data['Campaign Name'])
-            campaign_option = ['Lead Gen - Lead Pool 2023', 
-                               'Website Conversion: Rally Starter Edition (completed)', 
-                               'Website Conversion - Lead Pool 2023',
-                               'Lead Gen: Rally Starter Edition June 2023',
-                               'Website Conversion: Rally Starter Edition June 2023']
-            
+            campaign_option = campaign_data['Campaign Name'].unique().tolist()
+
         
         # When no proper campaign list found
         else :
@@ -222,48 +217,7 @@ def showEnrichPage() :
         if campaign_check :
 
             # Use the list of creative name
-            #creative_option = list(campaign_data['Creative Name'])
-            creative_option = ['Ad Copy 1',
-                            'Ad Copy 1_Appneta',
-                            'Ad Copy 1_Automation',
-                            'Ad Copy 1_Clarity',
-                            'Ad Copy 1_LGF_Appneta',
-                            'Ad Copy 1_LGF_Clarity',
-                            'Ad Copy 1_NetOps',
-                            'Ad Copy 1_Rally',
-                            'Ad Copy 2',
-                            'Ad Copy 2_Appneta',
-                            'Ad Copy 2_Automation',
-                            'Ad Copy 2_Clarity',
-                            'Ad Copy 2_LGF_Appneta',
-                            'Ad Copy 2_NetOps',
-                            'Ad Copy 2_Rally',
-                            'Ad Copy 3',
-                            'Ad Copy 3_Appneta',
-                            'Ad Copy 3_Automation',
-                            'Ad Copy 3_Clarity',
-                            'Ad Copy 3_LGF_Appneta',
-                            'Ad Copy 3_NetOps',
-                            'Ad Copy 3_Rally',
-                            'Ad Copy 4',
-                            'Ad Copy 4_Appneta',
-                            'Ad Copy 4_Automation',
-                            'Ad Copy 4_Clarity',
-                            'Ad Copy 4_NetOps',
-                            'Ad Copy 4_Rally',
-                            'Ad Copy 5',
-                            'Ad Copy 5_Appneta',
-                            'Ad Copy 5_Automation',
-                            'Ad Copy 5_Clarity',
-                            'Ad Copy 5_NetOps',
-                            'Ad Copy 5_Rally',
-                            'Ad Copy 6',
-                            'Ad Copy 6_Appneta',
-                            'Ad Copy 6_Automation',
-                            'Ad Copy 6_Clarity',
-                            'Ad Copy 6_NetOps',
-                            'Ad Copy 6_Rally',
-                            'Ad Copy 7']
+            creative_option = campaign_data['Creative Name'].unique().tolist()
 
         
         # When no proper campaign list found
