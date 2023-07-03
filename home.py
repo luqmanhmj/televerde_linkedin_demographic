@@ -242,7 +242,7 @@ def showEnrichPage() :
         if creative_id :
 
             # Get the selected creative's info
-            creative_id = list(campaign_data[campaign_data['Creative ID'] == creative_id]['Creative ID'])[0]
+            creative_name = list(campaign_data[campaign_data['Creative ID'] == creative_id]['Creative Name'])[0]
             solution_area = list(campaign_data[campaign_data['Creative ID'] == creative_id]['Solution Area'])[0]
 
     # In the third column
