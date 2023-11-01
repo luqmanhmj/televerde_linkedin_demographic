@@ -89,7 +89,7 @@ def endProcess() :
     st.session_state['file_upload'] = str(randint(1000, 100000000))
 
     # Rerun the page
-    st.experimental_rerun()
+    st.rerun()
 
 
 # Function to proceed to export
