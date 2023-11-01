@@ -103,13 +103,23 @@ def proceedExport() :
 def addColumns(df, campaign_id, campaign_name, campaign_group, creative_id, creative_name, solution_area, extract_date) :
     
     # Add the necessary columns
-    df['Campaign ID'] = campaign_id
-    df['Campaign Name'] = campaign_name
-    df['Campaign Group'] = campaign_group
-    df['Creative ID'] = creative_id
-    df['Creative Name'] = creative_name
-    df['Solution Area'] = solution_area
-    df['Extract Date'] = extract_date
+    #df['Campaign ID'] = campaign_id
+    #df['Campaign Name'] = campaign_name
+    #df['Campaign Group'] = campaign_group
+    #df['Creative ID'] = creative_id
+    #df['Creative Name'] = creative_name
+    #df['Solution Area'] = solution_area
+    #df['Extract Date'] = extract_date
+    df.loc[:, 'Campaign ID'] = campaign_id
+    df.loc[:, 'Campaign Name'] = campaign_name
+    df.loc[:, 'Campaign Group'] = campaign_group
+    df.loc[:, 'Creative ID'] = creative_id
+    df.loc[:, 'Creative Name'] = creative_name
+    df.loc[:, 'Solution Area'] = solution_area
+    df.loc[:, 'Extract Date'] = extract_date
+
+
+
 
     # Return modified dataframe
     return df
