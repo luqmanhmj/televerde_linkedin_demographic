@@ -497,4 +497,4 @@ def showEnrichPage() :
             st.session_state['creative_covered'] = []
 
             # Rerun the page
-            st.experimental_rerun()
+            st.rerun()
